@@ -5,6 +5,10 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  pages: write
+
 env:
   INSTANCE: 'Writerside/i'
   ARTIFACT: 'webHelpHI2-all.zip'
@@ -32,6 +36,7 @@ jobs:
           name: docs
           path: |
             artifacts/${{ env.ARTIFACT }}
+            artifacts/report.json
           retention-days: 7
   test:
     needs: build
@@ -51,7 +56,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: [ build, test ]
+    needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
