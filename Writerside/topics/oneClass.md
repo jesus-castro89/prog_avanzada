@@ -75,3 +75,19 @@ Y esta invocar o llamar a la función `factorial`:
 ```java
     algorithm.factorial();
 ```
+
+## Personalizando la salida de datos
+
+Para personalizar una ventana emergente se puede utilizar el método `UIManager.put` de la clase `UIManager`. Por
+ejemplo:
+
+```java
+// Personalizar el tamaño y la fuente del texto de los mensajes
+UIManager.put("OptionPane.messageFont", 
+    new Font("Grenze Gotisch", Font.BOLD, 20));
+// Personalizar el tamaño y la fuente de los botones de los mensajes
+UIManager.put("OptionPane.buttonFont", 
+    new Font("Grenze Gotisch", Font.BOLD, 20));
+// Cambiar el color del texto de los mensajes
+UIManager.put("OptionPane.messageForeground", Color.RED);
+```
