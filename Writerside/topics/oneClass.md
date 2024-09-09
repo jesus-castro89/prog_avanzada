@@ -92,7 +92,7 @@ UIManager.put("OptionPane.buttonFont",
 UIManager.put("OptionPane.messageForeground", Color.RED);
 ```
 
-### Ejemplo Completo
+### Ejemplo Completo 
 
 ```java
 import javax.swing.*;
