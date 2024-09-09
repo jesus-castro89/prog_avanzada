@@ -12,4 +12,5 @@
     <toc-element topic="verdad.md">
         <toc-element topic="verdad-if.md"/>
     </toc-element>
+    <toc-element topic="oneClass.md"/>
 </instance-profile>

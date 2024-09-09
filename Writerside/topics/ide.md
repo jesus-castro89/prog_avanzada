@@ -51,7 +51,9 @@ Para crear un proyecto en IntelliJ IDEA, sigue estos pasos:
 
 1. Abre IntelliJ IDEA y selecciona la opción `Create New Project` en la pantalla de inicio.
 2. Selecciona la opción `Java` en la lista de tipos de proyectos y haz clic en `Next`.
-   ![newProject.png](newProject.png)
+
+   ![newProject.png](newProject.png){style="block"}
+   
    > **Nota:** Asegúrate de tener configurado el SDK de Java en IntelliJ IDEA. Si no lo tienes configurado, puedes
    > seleccionar descargar el JDK, nosotros usaremos la versión 22.
    > ![jdk.png](jdk.png)
