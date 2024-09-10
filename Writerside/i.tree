@@ -9,6 +9,7 @@
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="ide.md"/>
     <toc-element topic="clases-objetos.md"/>
+    <toc-element topic="operadores.md"/>
     <toc-element topic="verdad.md">
         <toc-element topic="verdad-if.md"/>
     </toc-element>
