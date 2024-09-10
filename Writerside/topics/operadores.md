@@ -43,6 +43,28 @@ son:
 - `/=` (división y asignación): Divide un valor a una variable y asigna el resultado.
 - `%=` (módulo y asignación): Calcula el módulo de un valor a una variable y asigna el resultado.
 
+### Ejemplo
+
+```java
+int x = 5;
+int y = 10;
+
+x += y; // x = x + y
+System.out.println(x); // 15
+
+x -= y; // x = x - y
+System.out.println(x); // 5
+
+x *= y; // x = x * y
+System.out.println(x); // 50
+
+x /= y; // x = x / y
+System.out.println(x); // 5
+
+x %= y; // x = x % y
+System.out.println(x); // 5
+```
+
 ## Operadores de Comparación
 
 Los operadores de comparación se utilizan para comparar dos valores y devolver un resultado booleano. Los operadores de
