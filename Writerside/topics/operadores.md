@@ -22,6 +22,15 @@ Los operadores de incremento y decremento más comunes son:
 - `++` (incremento): Incrementa en uno el valor de una variable.
 - `--` (decremento): Decrementa en uno el valor de una variable.
 
+Estos operadores pueden utilizarse de dos formas:
+
+- Prefijo: El operador se coloca antes de la variable (`++i`, `--i`), y se incrementa o decrementa el valor de la
+  variable antes de realizar la operación.
+- Postfijo: El operador se coloca después de la variable (`i++`, `i--`), y se incrementa o decrementa el valor de la
+  variable después de realizar la operación.
+
+Esto puede tener un impacto en el resultado de la operación, especialmente si la variable se utiliza en una expresión.
+
 ## Operadores de Asignación
 
 Los operadores de asignación se utilizan para asignar un valor a una variable. Los operadores de asignación más comunes
