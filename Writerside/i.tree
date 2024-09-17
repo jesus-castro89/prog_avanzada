@@ -23,6 +23,7 @@
     <toc-element topic="verdad.md">
         <toc-element topic="verdad-if.md"/>
     </toc-element>
+    <toc-element topic="package.md"/>
     <toc-element topic="oneClass.md">
         <toc-element topic="algoritmoejemplo.md"/>
     </toc-element>

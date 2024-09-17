@@ -10,4 +10,8 @@
         <description>Created after removal of "TEST" from Inicio</description>
         <accepts>TEST.html</accepts>
     </rule>
+    <rule id="49c4a3ab">
+        <description>Created after removal of "Diagrama de clases" from Inicio</description>
+        <accepts>class-diagrama.html</accepts>
+    </rule>
 </rules>
