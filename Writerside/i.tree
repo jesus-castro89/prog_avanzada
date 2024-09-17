@@ -31,4 +31,7 @@
     <toc-element topic="enums.md"/>
     <toc-element topic="arrays.md"/>
     <toc-element topic="hashmap.md"/>
+    <toc-element topic="Proyecto-Integrador.md">
+        <toc-element topic="github.md"/>
+    </toc-element>
 </instance-profile>
