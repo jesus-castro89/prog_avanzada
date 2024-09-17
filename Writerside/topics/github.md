@@ -1,7 +1,7 @@
 # 1.- Iniciando el proyecto
 
 Para iniciar el proyecto, se debe crear un repositorio en GitHub que contendrá el código fuente del juego de Blackjack
-en C++.
+en Java.
 
 ## 1.1.- Creación del repositorio
 
@@ -20,12 +20,12 @@ Para crear un nuevo repositorio en GitHub, se deben seguir los siguientes pasos:
     - En la página "Create a new repository", se debe completar la información requerida:
       ![repo-date.png](repo-date.png){style="block"}
         - Repository name: Nombre del repositorio. Por ejemplo, "blackjack-cpp".
-        - Description (optional): Descripción opcional del repositorio. Por ejemplo, "A simple Blackjack game in C++".
+        - Description (optional): Descripción opcional del repositorio. Por ejemplo, "A simple Blackjack game in Java".
         - Public or Private: Seleccionar si el repositorio será público o privado. En este caso, se recomienda
           seleccionar "Public".
         - Initialize this repository with a README: Seleccionar esta opción para crear un archivo README.md en el
           repositorio.
-        - Add .gitignore: Seleccionar un archivo .gitignore para el repositorio. Por ejemplo, "C++".
+        - Add .gitignore: Seleccionar un archivo .gitignore para el repositorio. Por ejemplo, "Java".
         - Add a license: Seleccionar una licencia para el repositorio. Por ejemplo, "MIT License".
         - Hacer clic en el botón "Create repository" para crear el repositorio.
 3. Una vez creado el repositorio, se verá la página principal del repositorio en GitHub. En esta página, se puede
@@ -34,15 +34,15 @@ Para crear un nuevo repositorio en GitHub, se deben seguir los siguientes pasos:
 4. Modifica el archivo README.md con la información del proyecto. Puedes utilizar este archivo como plantilla para
    comenzar a escribir la información del proyecto, así como colocar la lista de integrantes del equipo.
 
-Este proceso creará un nuevo repositorio en GitHub que contendrá el código fuente del juego de Blackjack en C++. Así
+Este proceso creará un nuevo repositorio en GitHub que contendrá el código fuente del juego de Blackjack en Java. Así
 se podrá colaborar con otros miembros del equipo y mantener un historial de cambios del proyecto. Por lo cual solo se
 deberá de crear un repositorio en GitHub y seguir los pasos mencionados anteriormente.
 
-## 1.2.- Clonando en CLion
+## 1.2.- Clonando en IntelliJ
 
-Para clonar el repositorio en CLion, se deben seguir los siguientes pasos:
+Para clonar el repositorio en IntelliJ, se deben seguir los siguientes pasos:
 
-1. Abrir CLion.
+1. Abrir IntelliJ.
 2. En la barra de menú, seleccionar "Get from VCS" o "Check out from Version Control".
    ![vcs.png](vcs.png){style="block"}
 3. Seleccionar "GitHub" en la lista de proveedores de control de versiones.
@@ -56,9 +56,9 @@ Para clonar el repositorio en CLion, se deben seguir los siguientes pasos:
 6. Por defecto, se clonará el repositorio en la carpeta de usuario. Se puede cambiar la ubicación del repositorio si es
    necesario.
 7. Hacer clic en el botón "Clone" para clonar el repositorio en la máquina local.
-8. Una vez clonado el repositorio, se verá el proyecto en CLion y se podrá comenzar a trabajar en el código fuente del
-   juego de Blackjack en C++.
+8. Una vez clonado el repositorio, se verá el proyecto en IntelliJ y se podrá comenzar a trabajar en el código fuente del
+   juego de Blackjack en Java.
 
-Este proceso permitirá clonar el repositorio en CLion y comenzar a trabajar en el proyecto de forma colaborativa con
+Este proceso permitirá clonar el repositorio en IntelliJ y comenzar a trabajar en el proyecto de forma colaborativa con
 otros miembros del equipo. Así se podrá mantener un historial de cambios del proyecto y facilitar la colaboración en
-el desarrollo del juego de Blackjack en C++.
+el desarrollo del juego de Blackjack en Java.
