@@ -117,3 +117,16 @@ public void attack(Player player) {
         }
 }
 ```
+
+## 4.3.- La función isAlive()
+
+La función `isAlive()` es una función que verifica si un personaje (jugador o enemigo) está vivo. Esta función es
+importante para determinar si un personaje puede seguir participando en el juego.
+
+Aquí un ejemplo de cómo se podría implementar la función `isAlive()` en las clases `Player` y `Enemy`:
+
+```java 
+public boolean isAlive() {
+        return this.stats.get(Stats.HP) > 0;
+}
+```
