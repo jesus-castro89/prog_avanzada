@@ -34,5 +34,9 @@
     <toc-element topic="hashmap.md"/>
     <toc-element topic="Proyecto-Integrador.md">
         <toc-element topic="github.md"/>
+        <toc-element topic="rpg-package.md"/>
+        <toc-element topic="stats.md"/>
+        <toc-element topic="player-enemy.md"/>
+        <toc-element topic="interaction.md"/>
     </toc-element>
 </instance-profile>

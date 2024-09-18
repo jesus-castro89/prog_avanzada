@@ -19,8 +19,8 @@ Para crear un nuevo repositorio en GitHub, se deben seguir los siguientes pasos:
       ![new_repositorie.png](new_repositorie.png){style="block"}
     - En la página "Create a new repository", se debe completar la información requerida:
       ![repo-date.png](repo-date.png){style="block"}
-        - Repository name: Nombre del repositorio. Por ejemplo, "blackjack-cpp".
-        - Description (optional): Descripción opcional del repositorio. Por ejemplo, "A simple Blackjack game in Java".
+        - Repository name: Nombre del repositorio. Por ejemplo, "rpg-java".
+        - Description (optional): Descripción opcional del repositorio. Por ejemplo, "A simple RPG game in Java".
         - Public or Private: Seleccionar si el repositorio será público o privado. En este caso, se recomienda
           seleccionar "Public".
         - Initialize this repository with a README: Seleccionar esta opción para crear un archivo README.md en el
@@ -56,9 +56,9 @@ Para clonar el repositorio en IntelliJ, se deben seguir los siguientes pasos:
 6. Por defecto, se clonará el repositorio en la carpeta de usuario. Se puede cambiar la ubicación del repositorio si es
    necesario.
 7. Hacer clic en el botón "Clone" para clonar el repositorio en la máquina local.
-8. Una vez clonado el repositorio, se verá el proyecto en IntelliJ y se podrá comenzar a trabajar en el código fuente del
-   juego de Blackjack en Java.
+8. Una vez clonado el repositorio, se verá el proyecto en IntelliJ y se podrá comenzar a trabajar en el código fuente
+   del juego de RPG en Java.
 
 Este proceso permitirá clonar el repositorio en IntelliJ y comenzar a trabajar en el proyecto de forma colaborativa con
 otros miembros del equipo. Así se podrá mantener un historial de cambios del proyecto y facilitar la colaboración en
-el desarrollo del juego de Blackjack en Java.
+el desarrollo del juego de RPG en Java.
