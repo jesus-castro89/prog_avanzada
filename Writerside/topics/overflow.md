@@ -1,16 +1,10 @@
-# Sobrecarga y Sobrescritura
-
-La sobrecarga y sobrescritura son dos conceptos importantes en la programación orientada a objetos que permiten a los
-desarrolladores crear clases y métodos más flexibles y reutilizables. En este artículo, exploraremos qué son la
-sobrecarga y sobrescritura, cómo se implementan en Java y cuándo es apropiado utilizar cada uno de estos conceptos.
-
-## 1.- Sobrecarga
+# Sobrecarga de métodos
 
 La sobrecarga es un concepto que permite a los desarrolladores definir múltiples métodos con el mismo nombre en una
 clase, pero con diferentes parámetros. Esto significa que los métodos pueden realizar tareas similares, pero con
 diferentes tipos de datos o cantidades de parámetros.
 
-### Ejemplo de sobrecarga
+## Ejemplo de sobrecarga
 
 ```java
 public class Calculator {
@@ -28,7 +22,7 @@ En este ejemplo, la clase `Calculator` define dos métodos `add` con el mismo no
 parámetros (`int` y `double`). Esto permite a los desarrolladores utilizar el método `add` con diferentes tipos de
 datos sin tener que cambiar el nombre del método.
 
-### Llamada de métodos sobrecargados
+## Llamada de métodos sobrecargados
 
 ```java
 Calculator calculator = new Calculator();
@@ -54,7 +48,7 @@ En este ejemplo, se crea una instancia de la clase `Calculator` y se llama al m�
 parámetros. La sobrecarga permite a los desarrolladores utilizar el mismo nombre de método para realizar tareas
 similares con diferentes tipos de datos.
 
-### Reglas de la sobrecarga
+## Reglas de la sobrecarga
 
 Para sobrecargar un método en Java, se deben seguir las siguientes reglas:
 
@@ -68,7 +62,7 @@ Para sobrecargar un método en Java, se deben seguir las siguientes reglas:
 - Los métodos no pueden ser sobrecargados solo cambiando el modificador `final`.
 - Los métodos no pueden ser sobrecargados solo cambiando el modificador `abstract`.
 
-### Ventajas de la sobrecarga
+## Ventajas de la sobrecarga
 
 La sobrecarga ofrece las siguientes ventajas:
 

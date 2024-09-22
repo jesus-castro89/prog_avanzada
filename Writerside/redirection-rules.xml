@@ -14,4 +14,8 @@
         <description>Created after removal of "Diagrama de clases" from Inicio</description>
         <accepts>class-diagrama.html</accepts>
     </rule>
+    <rule id="131063aa">
+        <description>Created after removal of "Polimorfismo" from Inicio</description>
+        <accepts>polymorf.html</accepts>
+    </rule>
 </rules>
