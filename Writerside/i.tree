@@ -46,5 +46,6 @@
         <toc-element topic="stats.md"/>
         <toc-element topic="player-enemy.md"/>
         <toc-element topic="interaction.md"/>
+        <toc-element topic="extends-enemy.md"/>
     </toc-element>
 </instance-profile>
