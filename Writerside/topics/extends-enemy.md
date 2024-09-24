@@ -47,67 +47,67 @@ Siguiendo los siguientes pasos:
 1. Crea el paquete `enemy` dentro del paquete `entities`.
 2. Mueve la clase `Enemy` al paquete `enemy`.
 3. Crea la clase `GameCharacter` en el paquete `entities`.
+    - Esta clase deberá tener los atributos `name`, `stats` y `enemyType`.
+    - El atributo `enemyType` puede ser un Enum o un String, queda a tu elección.
+    - Copia los componentes de la clase `Enemy` a la clase `GameCharacter`.
+    - Modifica los niveles de acceso de los atributos de `Enemy` a `protected`.
+    - De tal manera que la clase quede de la siguiente manera:
+   ```java
+    package rpg.entities;
+    
+    import rpg.enums.Stats;
+    
+    import java.util.HashMap;
 
-- Esta clase deberá tener los atributos `name`, `stats` y `enemyType`.
-- El atributo `enemyType` puede ser un Enum o un String, queda a tu elección.
-- Copia los componentes de la clase `Enemy` a la clase `GameCharacter`.
-- Modifica los niveles de acceso de los atributos de `Enemy` a `protected`.
-- De tal manera que la clase quede de la siguiente manera:
-  ```java
-  package rpg.entities;
-  
-  import rpg.enums.Stats;
-  
-  import java.util.HashMap;
-  
-  public class GameCharacter {
-  
-      protected String name;
-      protected HashMap<Stats, Integer> stats;
-  
-      public GameCharacter(String name) {
-  
-          this.name = name;
-          this.stats = new HashMap<>();
-      }
-  
-      public boolean isAlive() {
-          return stats.get(Stats.HP) > 0;
-      }
-  
-      public void attack(GameCharacter enemy) {
-  
-          String message = "";
-          String enemyName = enemy.getName();
-          int damage = this.stats.get(Stats.ATTACK) - enemy.getStats().get(Stats.DEFENSE);
-          int newHP = enemy.getStats().get(Stats.HP);
-          if (damage > 0) {
-  
-              newHP = enemy.getStats().get(Stats.HP) - damage;
-              enemy.getStats().put(Stats.HP, newHP);
-              message += String.format("""
-                      %s attacks %s for %d damage!
-                      %s has %d HP left.
-                      """, this.name, enemyName, damage, enemyName, newHP);
-          } else {
-              message += String.format("""
-                      %s attacks %s but does no damage!
-                      %s has %d HP left.
-                      """, this.name, enemyName, enemyName, newHP);
-          }
-          System.out.println(message);
-      }
-  
-      public String getName() {
-          return String.format("%s el Intrépido", name);
-      }
-  
-      public HashMap<Stats, Integer> getStats() {
-          return stats;
-      }
-  }
-  ```
+    public class GameCharacter {
 
+        protected String name;
+
+        protected HashMap<Stats, Integer> stats;
+    
+        public GameCharacter(String name) {
+    
+            this.name = name;
+            this.stats = new HashMap<>();
+        }
+    
+        public boolean isAlive() {
+            return stats.get(Stats.HP) > 0;
+        }
+
+        public void attack(GameCharacter enemy) {
+    
+            String message = "";
+            String enemyName = enemy.getName();
+            int damage = this.stats.get(Stats.ATTACK) - enemy.getStats().get(Stats.DEFENSE);
+            int newHP = enemy.getStats().get(Stats.HP);
+            if (damage > 0) {
+    
+                newHP = enemy.getStats().get(Stats.HP) - damage;
+                enemy.getStats().put(Stats.HP, newHP);
+                message += String.format("""
+                        %s attacks %s for %d damage!
+                        %s has %d HP left.
+                        """, this.name, enemyName, damage, enemyName, newHP);
+            } else {
+                message += String.format("""
+                        %s attacks %s but does no damage!
+                        %s has %d HP left.
+                        """, this.name, enemyName, enemyName, newHP);
+            }
+            System.out.println(message);
+        }
+
+        public String getName() {
+            return String.format("%s el Intrépido", name);
+        }
+    
+        public HashMap<Stats, Integer> getStats() {
+            return stats;
+        }
+    }
+    ``` 
+   {collapsible="true" collapsed-title="GameCharacter.java"}
 4. Crea los paquetes para cada tipo de enemigo a tu elección dentro del paquete `enemy`.
 5. Crea al menos un enemigo de cada tipo en su respectivo paquete.
 6. Agrega el atributo `enemyType` a la clase `Enemy` y modifica el constructor para que reciba este atributo.
@@ -115,3 +115,160 @@ Siguiendo los siguientes pasos:
 8. Mueve la clase `Game` al paquete `rpg`.
 9. Modificar la clase `Game` para que cree un jugador y al menos un enemigo de forma aleatoria.
 10. Prueba que el juego funcione correctamente.
+
+## Ejemplos de Enemigos
+
+<tabs group="java-clases">
+  <tab title="RookieGoblin.java">
+
+  ```java
+
+    package rpg.entities.enemies.goblins;
+  
+    import rpg.entities.GameCharacter;
+    import rpg.entities.enemies.Enemy;
+    import rpg.enums.Stats;
+    import rpg.utils.Randomize;
+    
+    public class RookieGoblin extends Enemy {
+    
+        public RookieGoblin() {
+            super();
+            this.name = "Rookie Goblin";
+            this.stats.put(Stats.MAX_HP, 35);
+            this.stats.put(Stats.HP, 35);
+            this.stats.put(Stats.ATTACK, 6);
+            this.stats.put(Stats.DEFENSE, 2);
+        }
+    
+        @Override
+        public void attack(GameCharacter enemy) {
+            int attack = Randomize.getRandomInt(1, 3);
+            switch (attack) {
+                case 1:
+                    throwRock(enemy);
+                    break;
+                case 2:
+                    savageBite(enemy);
+                    break;
+                default:
+                    super.attack(enemy);
+                    break;
+            }
+        }
+    
+        protected void throwRock(GameCharacter enemy) {
+            int damage = 2;
+            enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);
+            System.out.println(this.name + " throws a rock at " + enemy.getName() + " for "
+                    + damage + " damage!");
+            System.out.println(enemy.getName() + " has " + enemy.getStats().get(Stats.HP) + " HP left.");
+        }
+    
+        protected void savageBite(GameCharacter enemy) {
+            int damage = 3;
+            enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);
+            System.out.println(this.name + " bites " + enemy.getName() + " for " + damage + " damage!");
+            System.out.println(enemy.getName() + " has " + enemy.getStats().get(Stats.HP) + " HP left.");
+        }
+    }
+  ```
+{collapsible="true" collapsed-title="RookieGoblin.java"}
+
+  </tab>
+<tab title="BasicSlime.java">
+
+```java
+package rpg.entities.enemies.slimes;
+
+import rpg.entities.GameCharacter;
+import rpg.entities.enemies.Enemy;
+import rpg.enums.Stats;
+
+public class BasicSlime extends Enemy {
+
+    public BasicSlime() {
+        super();
+        this.name = "Basic Slime";
+        this.stats.put(Stats.MAX_HP, 30);
+        this.stats.put(Stats.HP, 30);
+        this.stats.put(Stats.ATTACK, 10);
+        this.stats.put(Stats.DEFENSE, 4);
+    }
+
+    protected void splash(GameCharacter enemy) {
+
+        System.out.println(this.name + " splashes " + enemy.getName() + " and does nothing.");
+        System.out.println(enemy.getName() + " has " + enemy.getStats().get(Stats.HP) + " HP left.");
+    }
+
+    protected void trhowSlime(GameCharacter enemy) {
+
+        int damage = (int) (this.stats.get(Stats.ATTACK) * 0.8);
+        enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);
+        System.out.println(this.name + " throws slime at " + enemy.getName() + " for " + damage + " damage!");
+        System.out.println(enemy.getName() + " has " + enemy.getStats().get(Stats.HP) + " HP left.");
+    }
+
+    @Override
+    public void attack(GameCharacter enemy) {
+        if (Math.random() < 0.5) {
+            splash(enemy);
+        } else {
+            trhowSlime(enemy);
+        }
+    }
+}
+```
+{collapsible="true" collapsed-title="BasicSlime.java"}
+
+</tab>
+</tabs>
+
+## Ejemplo de Juego
+
+```java
+package rpg.entities;
+
+import rpg.entities.enemies.Enemy;
+import rpg.entities.enemies.goblins.RookieGoblin;
+import rpg.entities.enemies.slimes.BasicSlime;
+import rpg.utils.Randomize;
+
+public class Game {
+
+    private Player player;
+    private Enemy enemy;
+
+    public static void main(String[] args) {
+        Game game = new Game();
+        game.startGame();
+    }
+
+    public Game() {
+        this.player = new Player("Player");
+        int enemyType = Randomize.getRandomInt(1, 3);
+        this.enemy = switch (enemyType) {
+            case 1 -> new RookieGoblin();
+            case 2 -> new BasicSlime();
+            default -> new Enemy();
+        };
+    }
+
+    public void startGame() {
+        while (player.isAlive() && enemy.isAlive()) {
+            player.attack(enemy);
+            if (enemy.isAlive()) {
+                enemy.attack(player);
+            }
+        }
+
+        if (player.isAlive()) {
+            System.out.println(player.getName() + " wins!");
+        } else {
+            System.out.println(enemy.getName() + " wins!");
+        }
+    }
+}
+```
+{collapsible="true" collapsed-title="Game.java"}
