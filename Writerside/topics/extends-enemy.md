@@ -79,7 +79,8 @@ Siguiendo los siguientes pasos:
     
             String message = "";
             String enemyName = enemy.getName();
-            int damage = this.stats.get(Stats.ATTACK) - enemy.getStats().get(Stats.DEFENSE);
+            int damage = this.stats.get(Stats.ATTACK) 
+                         - enemy.getStats().get(Stats.DEFENSE);
             int newHP = enemy.getStats().get(Stats.HP);
             if (damage > 0) {
     
@@ -88,7 +89,8 @@ Siguiendo los siguientes pasos:
                 message += String.format("""
                         %s attacks %s for %d damage!
                         %s has %d HP left.
-                        """, this.name, enemyName, damage, enemyName, newHP);
+                        """, this.name, enemyName, damage, 
+                        enemyName, newHP);
             } else {
                 message += String.format("""
                         %s attacks %s but does no damage!
