@@ -1,9 +1,9 @@
 # Las clases abstractas
 
-Una clase abstracta es una clase que no puede ser instanciada, es decir, no se pueden crear objetos de una clase
-abstracta. Las clases abstractas se utilizan para definir una clase base que no tiene sentido por sí sola, pero que
-puede ser extendida por otras clases. Las clases abstractas pueden contener métodos abstractos, que son métodos que no
-tienen una implementación y deben ser implementados por las clases que heredan de la clase abstracta.
+Una clase abstracta es una clase de la cual no se pueden crear objetos, es decir, no se pueden crear objetos de una
+clase abstracta. Las clases abstractas se utilizan para definir una clase base que no tiene sentido por sí sola, pero
+que puede ser extendida por otras clases. Las clases abstractas pueden contener métodos abstractos, que son métodos que
+no tienen una implementación y deben ser implementados por las clases que heredan de la clase abstracta.
 
 ## Ejemplo de clase abstracta
 
