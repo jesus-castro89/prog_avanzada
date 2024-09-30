@@ -3,8 +3,8 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="i"
-                 name="Inicio"
-                 start-page="starter-topic.md">
+                  name="Programación Orientada a Objetos :: Java"
+                  start-page="starter-topic.md">
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="ide.md"/>
@@ -49,5 +49,6 @@
         <toc-element topic="interaction.md"/>
         <toc-element topic="extends-enemy.md"/>
         <toc-element topic="abstract-character.md"/>
+        <toc-element topic="inventory.md"/>
     </toc-element>
 </instance-profile>

@@ -4,8 +4,20 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <variables>
+        <noindex-content>false</noindex-content>
         <custom-css>custom.css</custom-css>
+        <primary-color>forest</primary-color>
+        <custom-favicons>
+            favicon-16x16.png, favicon-32x32.png, favicon-192x192.png, favicon-512x512.png
+        </custom-favicons>
+        <header-logo>
+            logo.png
+        </header-logo>
     </variables>
+    <sitemap priority="0.35" change-frequency="monthly"/>
+    <footer>
+        <copyright>M. en E. Jesús Aurelio Castro Magaña 2024</copyright>
+    </footer>
     <build-profile instance="i">
         <variables>
             <noindex-content>false</noindex-content>
