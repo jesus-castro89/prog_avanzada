@@ -50,6 +50,8 @@
         <toc-element topic="extends-enemy.md">
         </toc-element>
         <toc-element topic="abstract-character.md"/>
-        <toc-element topic="inventory.md"/>
+        <toc-element topic="inventory.md">
+            <toc-element topic="implements-inventory.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>

@@ -60,6 +60,7 @@ abstract class rpg.items.Item{
     # description: String
     # price: int
     # itemType: ItemType
+    + abstract initItem(): void
 }
 abstract class rpg.items.Equipment extends rpg.items.Item implements rpg.interfaces.Equipable, rpg.interfaces.Salable{
     # slot: Slot
@@ -74,14 +75,20 @@ abstract class rpg.items.weapons.Weapon extends rpg.items.Equipment{
 }
 class rpg.items.weapons.swords.Sword extends rpg.items.weapons.Weapon{
     + slash(): void
+    + initItem(): void
 }
 class rpg.items.armors.helmets.Helmet extends rpg.items.armors.Armor{
     + protect(): void
+    + initItem(): void
 }
-class rpg.items.Misc extends rpg.items.Item implements rpg.interfaces.Salable{
+abstract class rpg.items.Misc extends rpg.items.Item implements rpg.interfaces.Salable{
     # consumable: boolean
     # stackable: boolean
+    + abstract use(): void
+}
+class rpg.items.WolfPelt extends rpg.items.Misc{
     + use(): void
+    + initItem(): void
 }
 @enduml
 ```
