@@ -4,6 +4,21 @@ Para efectos de nuestro proyecto, la clase `GameCharacter` es una clase abstract
 genérico. La clase `GameCharacter` tiene un constructor que inicializa el nombre del personaje y un método abstracto
 `attack` que debe ser implementado por las clases que heredan de `GameCharacter`.
 
+## Interfaces
+
+```plantuml
+@startuml
+package rpg.interfaces {
+    interface Randomized {
+        +getRandomInt(min: int, max: int): int
+        +getRandomBoolean(): boolean
+    }
+}
+@enduml
+```
+
+## Tipos Enumerados
+
 ```plantuml
 @startuml
 package rpg.enums {
@@ -20,6 +35,13 @@ package rpg.enums {
         SECRET
     }
 }
+@enduml
+```
+
+## Diagrama de Clases
+
+```plantuml
+@startuml
 package rpg.entities {
     abstract class GameCharacter {
         -name: String
@@ -84,7 +106,6 @@ package rpg.entities {
 
 GameCharacter <|-- Player
 GameCharacter <|-- Enemy
-Enemy -- EnemyType
 Enemy <|-- BasicSlime
 Enemy <|-- RookieGoblin
 Enemy <|-- StrayWolf

@@ -1,0 +1,43 @@
+@startuml
+skinparam packageStyle frame
+skinparam arrow{
+    color crimson
+    headColor crimson
+    thickness 2.5
+}
+interface rpg.interfaces.Equipable{
+    + equip(): void
+    + unequip(): void
+}
+interface rpg.interfaces.Salable{
+    + sell(): void
+}
+abstract class rpg.items.Item{
+    # name: String
+    # description: String
+    # price: int
+    # itemType: ItemType
+}
+abstract class rpg.items.Equipment extends rpg.items.Item implements rpg.interfaces.Equipable, rpg.interfaces.Salable{
+    # slot: Slot
+    # rarity: Rarity
+    # stats: HashMap<Stat, int>
+}
+abstract class rpg.items.armors.Armor extends rpg.items.Equipment{
+    # armorType: ArmorType
+}
+abstract class rpg.items.weapons.Weapon extends rpg.items.Equipment{
+    # weaponType: WeaponType
+}
+class rpg.items.weapons.swords.Sword extends rpg.items.weapons.Weapon{
+    + slash(): void
+}
+class rpg.items.armors.helmets.Helmet extends rpg.items.armors.Armor{
+    + protect(): void
+}
+class rpg.items.Misc extends rpg.items.Item implements rpg.interfaces.Salable{
+    # consumable: boolean
+    # stackable: boolean
+    + use(): void
+}
+@enduml

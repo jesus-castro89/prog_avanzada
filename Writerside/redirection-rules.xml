@@ -18,4 +18,9 @@
         <description>Created after removal of "Polimorfismo" from Inicio</description>
         <accepts>polymorf.html</accepts>
     </rule>
+    <rule id="3eeabdfc">
+        <description>Created after removal of "6.1 Diagrama de Clases" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>enemy-diagram.html</accepts>
+    </rule>
 </rules>

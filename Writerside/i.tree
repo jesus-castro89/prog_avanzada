@@ -47,7 +47,8 @@
         <toc-element topic="stats.md"/>
         <toc-element topic="player-enemy.md"/>
         <toc-element topic="interaction.md"/>
-        <toc-element topic="extends-enemy.md"/>
+        <toc-element topic="extends-enemy.md">
+        </toc-element>
         <toc-element topic="abstract-character.md"/>
         <toc-element topic="inventory.md"/>
     </toc-element>
