@@ -156,3 +156,38 @@ public class Inventory {
     }
 }
 ```
+
+En este ejemplo, la clase `Inventario` tiene una lista de objetos `Item` y un atributo de capacidad que determina
+cuántos objetos puede contener el inventario. La clase `Inventario` tiene métodos para agregar, eliminar, obtener y
+contar objetos en el inventario, así como para verificar si el inventario está lleno o vacío. También tiene métodos para
+aumentar la capacidad del inventario y listar armaduras y objetos misceláneos en el inventario.
+
+## Probando el inventario
+
+Para probar nuestro inventario, podemos crear una instancia de la clase `Inventario` y agregar algunos objetos a él.
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        Inventory inventory = new Inventory(10);
+
+        Armor armor = new WoodArmor();
+        inventory.addItem(armor);
+
+        Misc misc = new WolfPelt();
+        inventory.addItem(misc);
+
+        System.out.println("Armors in inventory:");
+        for (Armor a : inventory.getArmors()) {
+            System.out.println(a.getName());
+        }
+
+        System.out.println("Miscs in inventory:");
+        for (Misc m : inventory.getMiscs()) {
+            System.out.println(m.getName());
+        }
+    }
+}
+```
