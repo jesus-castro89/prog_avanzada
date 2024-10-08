@@ -81,6 +81,10 @@ package rpg.enum{
     enum Slot{
         HEAD, BODY, LEGS, FEET, HANDS, MAIN_HAND        
     }
+    
+    enum Rarity{
+        COMMON, UNCOMMON, RARE, EPIC, LEGENDARY
+    }
 }
 @enduml
 ```

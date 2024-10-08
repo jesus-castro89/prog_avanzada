@@ -108,8 +108,8 @@ public class Inventory {
         items.remove(item);
     }
 
-    public void getItem(int index) {
-        items.get(index);
+    public Item getItem(int index) {
+        return items.get(index);
     }
 
     public void getItemCount() {
