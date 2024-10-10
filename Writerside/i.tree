@@ -41,6 +41,7 @@
     </toc-element>
     <toc-element topic="interface.md"/>
     <toc-element topic="exceptions.md"/>
+    <toc-element topic="frames.md"/>
     <toc-element topic="Proyecto-Integrador.md">
         <toc-element topic="commit-update.md"/>
         <toc-element topic="github.md"/>
@@ -55,5 +56,7 @@
             <toc-element topic="implements-inventory.md"/>
         </toc-element>
         <toc-element topic="player-inventory.md"/>
+        <toc-element topic="window.md"/>
+        <toc-element topic="sections.md"/>
     </toc-element>
 </instance-profile>
