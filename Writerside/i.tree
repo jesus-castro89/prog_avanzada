@@ -42,6 +42,7 @@
     <toc-element topic="interface.md"/>
     <toc-element topic="exceptions.md"/>
     <toc-element topic="frames.md"/>
+    <toc-element topic="jpanel.md"/>
     <toc-element topic="Proyecto-Integrador.md">
         <toc-element topic="commit-update.md"/>
         <toc-element topic="github.md"/>
