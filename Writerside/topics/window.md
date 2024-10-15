@@ -74,7 +74,7 @@ package rpg.gui;
 
 import javax.swing.JFrame;
 
-public class MainWindow extends JFrame implements WindowConstants {
+public class MainWindow extends JFrame{
 
     private JPanel mainPanel;
 
