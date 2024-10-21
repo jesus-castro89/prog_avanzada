@@ -13,7 +13,7 @@ recuperar rápidamente cuando sea necesario.
 Aquí hay un ejemplo de cómo crear una caché de imágenes en Java utilizando la clase `HashMap`:
 
 ```java
-package rpg.utils;
+package rpg.utils.cache;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -66,7 +66,7 @@ La clase `ImageLoader` es una clase auxiliar que se encarga de cargar imágenes 
 ejemplo de cómo implementar la clase `ImageLoader`:
 
 ```java
-package rpg.utils;
+package rpg.utils.cache;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
