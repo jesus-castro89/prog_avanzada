@@ -68,5 +68,7 @@
         <toc-element topic="sections.md"/>
         <toc-element topic="caches.md"/>
         <toc-element topic="panels.md"/>
+        <toc-element topic="draw-panels.md"/>
+        <toc-element topic="ui-buttons.md"/>
     </toc-element>
 </instance-profile>
