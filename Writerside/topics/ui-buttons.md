@@ -148,6 +148,11 @@ sobrescrito los métodos `installDefaults`, `getPreferredSize`, `getMaximumSize`
 apariencia del botón. Además, hemos creado un método llamado `initParts` que inicializa las partes del botón en sus
 estados normal y hover.
 
+> **Nota**: En este ejemplo, hemos dividido el botón en tres partes: el borde izquierdo, el centro y el borde derecho.
+> En el método `drawButtonParts`, dibujamos las partes del botón utilizando las imágenes correspondientes.
+> En el método `paint`, verificamos si el cursor del ratón pasa sobre el botón y dibujamos las partes del botón
+> correspondientes.
+
 ## Creando tus propios botones
 
 Para crear tus propios botones, puedes seguir los siguientes pasos:
