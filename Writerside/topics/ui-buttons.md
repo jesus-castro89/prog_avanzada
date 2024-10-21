@@ -163,6 +163,25 @@ Para crear tus propios botones, puedes seguir los siguientes pasos:
 > sencillo que crear un botón desde cero. Además de que posteriormente podrás reutilizar estos botones en otros
 > proyectos. E inclusive agregar eventos a estos botones para que realicen acciones específicas.
 
+## Usando los botones en la interfaz de usuario
+
+Para usar los botones en la interfaz de usuario, puedes seguir los siguientes pasos:
+
+1. Crea una instancia de la clase `BaseButton` y personalízala según tus necesidades.
+2. Agrega un botón a un panel o a otro contenedor de la interfaz de usuario utilizando el método `add`.
+3. Habilita el `Custom Create` para personalizar la apariencia de los botones.
+4. Crea y personaliza tus bótones según tus necesidades desde la clase `MainWindow`.
+   ```java
+   private void createUIComponents() {
+           topPanel = new TopPanel();
+           middlePanel = new MiddlePanel();
+           bottomPanel = new BottomPanel();
+           button1 = new BaseButton("Button 1");
+           b2 = new BaseButton("Tiendas");
+           b3 = new BaseButton("Inventario");
+   }
+   ```
+
 # Conclusión
 
 En este tutorial, hemos aprendido cómo crear botones personalizados en una interfaz de usuario utilizando Java Swing.

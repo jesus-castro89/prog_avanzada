@@ -100,6 +100,21 @@ public class TopPanel extends BackgroundPanel {
 > paneles. Es importante tener en cuenta que estas clases y constantes deberán ser definidas en el proyecto para poder
 > utilizarlas.
 
+## Agregando el Panel Superior a la Ventana
+
+Para agregar el panel superior a la ventana, deberemos hacer el componente JPanel superior de la ventana tenga un
+nombre y tener habilitado la creación personalizada de código. Luego, deberemos agregar el siguiente código en el
+la función adecuada de la siguiente forma:
+
+```java
+private void createUIComponents() {
+        topPanel = new TopPanel();
+}
+```
+
+De esta manera, el panel superior se agregará a la ventana y se mostrará en la interfaz de usuario. Deberemos repetir
+este proceso para los paneles central e inferior.
+
 ## Conclusiones
 
 En este artículo, hemos aprendido cómo crear paneles personalizados en Java utilizando la clase `JPanel`. Hemos
