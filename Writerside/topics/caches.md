@@ -101,7 +101,7 @@ La clase `FontLoader` es una clase auxiliar que se encarga de cargar fuentes des
 ejemplo de cómo implementar la clase `FontLoader`:
 
 ```java
-package unitec.rpg.ui.cache;
+package rpg.utils.cache;
 
 import javax.swing.*;
 import java.awt.*;
