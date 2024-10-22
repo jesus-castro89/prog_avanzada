@@ -70,5 +70,7 @@
         <toc-element topic="panels.md"/>
         <toc-element topic="draw-panels.md"/>
         <toc-element topic="ui-buttons.md"/>
+        <toc-element topic="portrait.md"/>
+        <toc-element topic="status-bars.md"/>
     </toc-element>
 </instance-profile>
