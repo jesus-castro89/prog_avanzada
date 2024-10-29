@@ -14,38 +14,41 @@ apariencia de los botones. A continuación, se muestra el código de la clase `B
 ```java
 package rpg.gui.buttons;
 
+import rpg.gui.ui.HoverButtonUI;
 import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
 
-public class BaseButton extends JButton {
+public abstract class BaseButton extends JButton {
 
     public BaseButton(String text) {
 
         setText(text);
-        // Agregamos los iconos a la caché de imágenes.
-        setIcon(
-                new ImageIcon(ImageCache.addImage("shopIdle", "icons/shopIdle.png")));
-        setRolloverIcon(
-                new ImageIcon(ImageCache.addImage("shopHover", "icons/shopHover.png")));
-        // Establecemos el manger de UI.
+        initIcons();
         setUI(new HoverButtonUI());
     }
+
+    protected abstract void initIcons();
 }
 ```
 
-En este código, hemos creado una clase llamada `BaseButton` que hereda de `JButton`. En el constructor de la clase,
-establecemos el texto del botón y agregamos los iconos a la caché de imágenes. Luego, establecemos el `UI` del botón
-utilizando la clase `HoverButtonUI`.
+En este código, hemos creado una clase llamada `BaseButton` que hereda de `JButton`. En esta clase, hemos sobrescrito
+el constructor para inicializar el texto del botón y llamar al método `initIcons` para inicializar los iconos del 
+botón.
+
+> **Nota**: La clase `BaseButton` es una clase abstracta que nos permite personalizar la apariencia de los botones. 
+> En este ejemplo, hemos creado un constructor que inicializa el texto del botón y llama al método `initIcons` para
+> inicializar los iconos del botón. Además, hemos utilizado la clase `HoverButtonUI` para personalizar la apariencia
+> de los botones cuando el cursor del ratón pasa sobre ellos.
 
 La clase `HoverButtonUI` es una clase que nos permite personalizar la apariencia de los botones cuando el cursor del
 ratón pasa sobre ellos. A continuación, se muestra el código de la clase `HoverButtonUI`, tomando en cuenta que para
 efectos de este ejemplo, se dividen el botón en tres partes: el borde izquierdo, el centro y el borde derecho.
 
 ```java
-package rpg.gui.buttons;
+package rpg.gui.ui;
 
-import rpg.utils.cache.FontCache;
+import rpg.gui.UIConstants;
 import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
@@ -63,8 +66,7 @@ public class HoverButtonUI extends BasicButtonUI {
     protected void installDefaults(AbstractButton b) {
 
         initParts();
-        b.setFont(FontCache.addFont("M6X",
-                "fonts/M6X.ttf").deriveFont(22.5f));
+        b.setFont(UIConstants.FONT.deriveFont(Font.PLAIN, 24));
         b.setForeground(Color.BLACK);
         b.setDoubleBuffered(true);
         b.setOpaque(false);
@@ -98,7 +100,7 @@ public class HoverButtonUI extends BasicButtonUI {
      * Inicializa las partes del botón.
      * En sus estados normal y hover.
      */
-    private void initParts() {
+    protected void initParts() {
         //Inicializamos los arreglos de imágenes.
         parts = new ImageIcon[3];
         partsHover = new ImageIcon[3];
@@ -131,7 +133,7 @@ public class HoverButtonUI extends BasicButtonUI {
         super.paint(g2d, c);
     }
 
-    private void drawButtonParts(Graphics2D g2d, ImageIcon[] parts) {
+    protected void drawButtonParts(Graphics2D g2d, ImageIcon[] parts) {
 
         g2d.drawImage(parts[0].getImage(), 0, 0, null);
         g2d.translate(27, 0);
@@ -181,6 +183,47 @@ Para crear tus propios botones, puedes seguir los siguientes pasos:
 > sencillo que crear un botón desde cero. Además de que posteriormente podrás reutilizar estos botones en otros
 > proyectos. E inclusive agregar eventos a estos botones para que realicen acciones específicas.
 
+Veamos un ejemplo de cómo crear un botón personalizado:
+
+```java
+package rpg.gui.buttons;
+
+public class AttackButton extends UserButton{
+
+        public AttackButton() {
+            super("Atacar");
+        }
+}
+```
+
+En este ejemplo, hemos creado una clase llamada `AttackButton` que hereda de `UserButton`. En esta clase, hemos
+sobrescrito el constructor para inicializar el texto del botón con el valor "Atacar".
+
+Por su lado `UserButton` es una clase que hereda de `BaseButton` y que nos permite personalizar la apariencia de los
+botones. A continuación, se muestra el código de la clase `UserButton`:
+
+```java
+package rpg.gui.buttons;
+
+import rpg.gui.ui.UserHoverUI;
+
+public abstract class UserButton extends BaseButton {
+
+    public UserButton(String text) {
+        super(text);
+        // Agregamos los iconos a la caché de imágenes.
+        setIcon(null);
+        setRolloverIcon(null);
+        setUI(new UserHoverUI());
+    }
+
+    @Override
+    protected void initIcons() {
+        // No se inicializan iconos.
+    }
+}
+```
+
 ## Usando los botones en la interfaz de usuario
 
 Para usar los botones en la interfaz de usuario, puedes seguir los siguientes pasos:
@@ -194,9 +237,7 @@ Para usar los botones en la interfaz de usuario, puedes seguir los siguientes pa
            topPanel = new TopPanel();
            middlePanel = new MiddlePanel();
            bottomPanel = new BottomPanel();
-           button1 = new BaseButton("Button 1");
-           b2 = new BaseButton("Tiendas");
-           b3 = new BaseButton("Inventario");
+           button1 = new AttackButton();
    }
    ```
 
