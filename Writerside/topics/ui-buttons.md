@@ -153,6 +153,19 @@ estados normal y hover.
 > En el método `paint`, verificamos si el cursor del ratón pasa sobre el botón y dibujamos las partes del botón
 > correspondientes.
 
+> **Nota**: En este ejemplo, hemos utilizado la clase `ImageCache` para almacenar las imágenes en la caché y la clase
+> `FontCache` para almacenar las fuentes en la caché. Estas clases nos permiten cargar las imágenes y las fuentes de
+> forma eficiente y reutilizarlas en toda la aplicación. Así que recuerda que deberás usar tus propias imágenes y
+> fuentes para personalizar la apariencia de los botones y de tu interfaz de usuario.
+
+## Las imágenes de los botones
+
+El ejemplo anterior hace uso de las siguientes imágenes para personalizar la apariencia de los botones:
+
+* ![leftSide.png](..%2Fimages%2FleftSide.png)
+* ![centerSide.png](..%2Fimages%2FcenterSide.png)
+* ![rightSide.png](..%2Fimages%2FrightSide.png)
+
 ## Creando tus propios botones
 
 Para crear tus propios botones, puedes seguir los siguientes pasos:
@@ -187,9 +200,9 @@ Para usar los botones en la interfaz de usuario, puedes seguir los siguientes pa
    }
    ```
 
-# Conclusión
+## Conclusión
 
 En este tutorial, hemos aprendido cómo crear botones personalizados en una interfaz de usuario utilizando Java Swing.
 Hemos creado una clase llamada `BaseButton` que hereda de `JButton` y nos permite personalizar la apariencia de los
-botones. Además, hemos creado una clase llamada `HoverButtonUI` que hereda de `BasicButtonUI` y nos permite personalizar
-la apariencia de los botones cuando el cursor del ratón pasa sobre ellos.
+botones. Además, hemos generado una clase llamada `HoverButtonUI` que hereda de `BasicButtonUI` y nos permite
+personalizar la apariencia de los botones cuando el cursor del ratón pasa sobre ellos.
