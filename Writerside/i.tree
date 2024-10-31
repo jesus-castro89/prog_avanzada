@@ -76,5 +76,6 @@
         <toc-element topic="status-bars.md"/>
         <toc-element topic="centerLabel.md"/>
         <toc-element topic="sprites.md"/>
+        <toc-element topic="textarea.md"/>
     </toc-element>
 </instance-profile>
