@@ -29,8 +29,7 @@ import javax.swing.*;
 public class NameLabel extends JLabel {
 
     public NameLabel(String name) {
-        super();
-        setText(name);
+        super(name);
         setUI(new NameLabelUI());
     }
 }
@@ -91,16 +90,16 @@ public class NameLabelUI extends GameLabelUI {
         JLabel label = (JLabel) c;
         FontMetrics fm = g.getFontMetrics();
         String clippedText = layout(label, fm, c.getWidth(), c.getHeight());
-        int textX = fm.stringWidth(label.getText());
+        int stringWidth = fm.stringWidth(label.getText());
         int textY = paintTextR.y;
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.drawImage(icons[0], 0, 0, icons[0].getWidth(), icons[0].getHeight(), c);
         g2d.translate(icons[0].getWidth(), 0);
-        g2d.drawImage(icons[1], 0, 0, textX, icons[1].getHeight(), c);
-        g2d.translate(textX, 0);
+        g2d.drawImage(icons[1], 0, 0, stringWidth, icons[1].getHeight(), c);
+        g2d.translate(stringWidth, 0);
         g2d.drawImage(icons[2], 0, 0, icons[2].getWidth(), icons[2].getHeight(), c);
-        g2d.translate(-textX, 0);
+        g2d.translate(-stringWidth, 0);
         g2d.drawString(clippedText, 0, textY + fm.getAscent());
     }
 }
@@ -178,3 +177,98 @@ dinero. Además, hemos personalizado la apariencia de la etiqueta para el dinero
 > **Nota:** Estamos usando la clase `PortraitLabel` para personalizar la apariencia de la etiqueta para el dinero
 > Esto debido a que la estructura de la etiqueta para el dinero es similar a la de la etiqueta para los nombres. Solo
 > que en esta última agregamos un texto que representa la cantidad de piezas de oro.
+
+Para que lo anterior funciones, deberemos actualizar dos clases, `PortraitLabel` y `PortraitLabelUI`.
+
+```java
+package rpg.gui.labels;
+
+import rpg.gui.ui.GameLabelUI;
+import rpg.utils.cache.ImageCache;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class PortraitLabel extends JLabel {
+
+    protected ImageIcon icon;
+
+    public PortraitLabel() {
+        initComponents();
+        setUI(new GameLabelUI(getPreferredSize(), icon));
+    }
+
+    public void initComponents() {
+        ImageCache.addImage("portrait", "player/portrait.png");
+        icon = ImageCache.getImageIcon("portrait");
+        setPreferredSize(
+                new Dimension(icon.getIconWidth(),
+                        icon.getIconHeight()));
+        setIcon(icon);
+    }
+}
+```
+
+```java
+package rpg.gui.ui;
+
+import javax.swing.*;
+import javax.swing.plaf.basic.BasicLabelUI;
+import java.awt.*;
+
+public class GameLabelUI extends BasicLabelUI {
+
+    protected final Dimension size;
+    protected final ImageIcon icon;
+    protected Rectangle paintIconR = new Rectangle();
+    protected Rectangle paintTextR = new Rectangle();
+
+    public GameLabelUI(Dimension size, ImageIcon icon) {
+
+        this.size = size;
+        this.icon = icon;
+    }
+
+    @Override
+    protected void installDefaults(JLabel c) {
+
+        c.setOpaque(false);
+        c.setBorder(null);
+    }
+
+    @Override
+    public void paint(Graphics g, JComponent c) {
+
+        JLabel label = (JLabel) c;
+        FontMetrics fm = g.getFontMetrics();
+        String clippedText = layout(label, fm, c.getWidth(), c.getHeight());
+        int textX = 40 + ((paintIconR.width - 40 - (fm.stringWidth(label.getText()))) / 2);
+        int textY = paintTextR.y + fm.getAscent();
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2d.drawImage(icon.getImage(), 0, 0, size.width, size.height, c);
+        super.paintEnabledText(label, g, clippedText, textX, textY);
+    }
+
+    protected String layout(JLabel label, FontMetrics fm,
+                            int width, int height) {
+        Insets insets = label.getInsets(null);
+        String text = label.getText();
+        Icon icon = (label.isEnabled()) ? label.getIcon() :
+                label.getDisabledIcon();
+        Rectangle paintViewR = new Rectangle();
+        paintViewR.x = insets.left;
+        paintViewR.y = insets.top;
+        paintViewR.width = width - (insets.left + insets.right);
+        paintViewR.height = height - (insets.top + insets.bottom);
+        paintIconR.x = paintIconR.y = paintIconR.width = paintIconR.height = 0;
+        paintTextR.x = paintTextR.y = paintTextR.width = paintTextR.height = 0;
+        return layoutCL(label, fm, text, icon, paintViewR, paintIconR,
+                paintTextR);
+    }
+}
+```
+
+En este código, hemos actualizado la clase `PortraitLabel` para que herede de `JLabel` y que represente la etiqueta
+para el dinero. Además, hemos actualizado la clase `PortraitLabelUI` para que herede de `BasicLabelUI` y que
+personalice la apariencia de la etiqueta para el dinero.
