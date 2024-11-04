@@ -47,6 +47,7 @@
     <toc-element topic="desktop-pane.md"/>
     <toc-element topic="internal-frame.md"/>
     <toc-element topic="jlabel.md"/>
+    <toc-element topic="scroll-test.md"/>
     <toc-element topic="ui-classess.md">
         <toc-element topic="basic-panel-ui.md"/>
         <toc-element topic="basic-botton.md"/>
