@@ -307,3 +307,21 @@ public interface UIConstants {
 
 > **Nota**: Toma en consideración que estos tamaños y dimensiones son solo un ejemplo y pueden ser ajustados según las
 > necesidades de la aplicación.
+
+## Actualización de la Clase `MainWindow`
+
+Recuerda que debes actualizar la clase `MainWindow` para agregar las barras de estado a la interfaz de usuario. Puedes
+hacerlo de la siguiente manera:
+
+```java
+private void createUIComponents() {
+
+        // Otros componentes de la interfaz
+        lifeLabel = new BarLabel(100, 100, BarType.LIFE);
+        magicLabel = new BarLabel(30, 100, BarType.MAGIC);
+        expLabel = new BarLabel(0, 350, BarType.EXPERIENCE);
+}
+```
+
+En este código, hemos creado tres barras de estado: una para la vida, una para la magia y una para la experiencia. Cada
+barra de estado tiene un valor actual, un valor máximo y un tipo asociado.
