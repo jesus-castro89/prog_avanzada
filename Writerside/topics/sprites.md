@@ -105,6 +105,41 @@ public abstract class Enemy extends GameCharacter {
 }
 ```
 
+Recuerda que en el constructor de cada enemigo, se debe asignar el tipo de enemigo, por ejemplo, tomento la clase
+WoodBear:
+
+```java
+    public WoodBear() {
+        super("Wood Bear");
+        ImageCache.addImage("wood_bear", "enemies/MountainScarbear.png");
+    }
+
+    @Override
+    protected void initCharacter() {
+        this.type = EnemyType.BASIC;
+        this.stats.put(Stats.MAX_HP, 50);
+        this.stats.put(Stats.HP, 50);
+        this.stats.put(Stats.ATTACK, 8);
+        this.stats.put(Stats.DEFENSE, 4);
+        this.stats.put(Stats.EXPERIENCE, 30);
+        this.stats.put(Stats.GOLD, 20);
+    }
+    
+    @Override
+    public ImageIcon getSprite() {
+        return ImageCache.getImageIcon("wood_bear");
+    }
+```
+
+> **Nota:** Como puedes notar, en el constructor de la clase `WoodBear` se agrega la imagen del enemigo al caché de
+> imágenes y en la función `getSprite` se recupera la imagen del enemigo.
+
+> **Nota:** La función `initCharacter` se encarga de inicializar los atributos del enemigo, como la vida, ataque,
+> defensa, experiencia y oro. Es importante que esta función inicialice los atributos del enemigo, ya que de lo
+> contrario, el enemigo no podrá atacar, recibir daño o morir y causará errores en el juego.
+
+## Mostrando el sprite del enemigo
+
 Luego crearemos la clase `EnemySpriteLabel` que extiende de `JLabel`, mostraremos el sprite del enemigo.
 
 ```java

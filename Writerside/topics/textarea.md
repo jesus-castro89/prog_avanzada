@@ -48,6 +48,24 @@ esta área de mensajes, se mostrarán los mensajes al jugador, como mensajes de 
 > **Nota:** Recuerda que el área de mensajes debe tener un tamaño adecuado para que los mensajes se muestren
 > correctamente al igual que los botones de acción.
 
+## Función para mostrar mensajes
+
+Para mostrar mensajes en el JTextArea, agregaremos un método a nuestra clase de ventana principal que se encargará de
+agregar mensajes al JTextArea y desplazar automáticamente el JTextArea al final del texto. Aquí tienes un ejemplo de
+cómo implementar esta función:
+
+```java
+public void appendText(String text) {
+   // Añadimos el texto al textDisplay
+   textDisplay.append(text);
+   // Hacemos que el textDisplay se posicione en la última línea
+   textDisplay.setCaretPosition(textDisplay.getDocument().getLength());
+}
+```
+
+> **Nota:** Se asume que `textDisplay` es el nombre del JTextArea que contiene los mensajes. Y que las funciones de
+> `textDisplay` se encuentran en la clase `MainPanel`.
+
 ## Conclusión
 
 En esta sección, hemos creado el área de mensajes que se mostrará en la parte inferior de la ventana principal. Esta
