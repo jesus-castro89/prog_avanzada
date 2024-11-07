@@ -78,5 +78,6 @@
         <toc-element topic="centerLabel.md"/>
         <toc-element topic="sprites.md"/>
         <toc-element topic="textarea.md"/>
+        <toc-element topic="update-entities.md"/>
     </toc-element>
 </instance-profile>
