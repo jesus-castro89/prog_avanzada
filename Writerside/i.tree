@@ -79,5 +79,6 @@
         <toc-element topic="sprites.md"/>
         <toc-element topic="textarea.md"/>
         <toc-element topic="update-entities.md"/>
+        <toc-element topic="enemy-factory.md"/>
     </toc-element>
 </instance-profile>
