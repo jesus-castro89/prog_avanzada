@@ -282,6 +282,11 @@ private void createUIComponents() {
         nameLabel = new NameLabel("{Tu Personaje} LVL. 1");
 }
 ```
+> **Nota:** Recuerda que debes reemplazar `{Tu Personaje}` por el nombre de tu personaje.
+
+> **Nota:** Recuerda que cada componente que creemos debe ser agregado al panel correspondiente. Es decir, si agregamos
+> un componente a `topPanel`, debemos agregarlo a `topPanel` en la vista de diseño. Y posteriormente seleccionar la
+> opción `Custom Create` para que podamos sobreescribir dicho componente en la función crearUIComponents.
 
 En este código, hemos actualizado la clase `PortraitLabel` para que herede de `JLabel` y que represente la etiqueta
 para el dinero. Además, hemos actualizado la clase `PortraitLabelUI` para que herede de `BasicLabelUI` y que
