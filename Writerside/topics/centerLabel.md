@@ -269,6 +269,20 @@ public class GameLabelUI extends BasicLabelUI {
 }
 ```
 
+## Actualización de la Clase `MainWindow`
+
+Recuerda que debes actualizar la clase `MainWindow` para agregar las barras de estado a la interfaz de usuario. Puedes
+hacerlo de la siguiente manera:
+
+```java
+private void createUIComponents() {
+
+        // Otros componentes de la interfaz
+        goldLabel = new GoldLabel();
+        nameLabel = new NameLabel("{Tu Personaje} LVL. 1");
+}
+```
+
 En este código, hemos actualizado la clase `PortraitLabel` para que herede de `JLabel` y que represente la etiqueta
 para el dinero. Además, hemos actualizado la clase `PortraitLabelUI` para que herede de `BasicLabelUI` y que
 personalice la apariencia de la etiqueta para el dinero.
