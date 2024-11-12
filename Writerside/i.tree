@@ -80,5 +80,7 @@
         <toc-element topic="textarea.md"/>
         <toc-element topic="update-entities.md"/>
         <toc-element topic="enemy-factory.md"/>
+        <toc-element topic="main-window.md"/>
+        <toc-element topic="new-window.md"/>
     </toc-element>
 </instance-profile>
