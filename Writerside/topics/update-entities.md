@@ -330,5 +330,102 @@ public class RookieGoblin extends Enemy {
 > **Nota:** Toma en consideración que el valor de los stats de los enemigos y del jugador pueden variar dependiendo de
 > cómo quieras balancear el juego. Y que debes de inicializarlos en ambas clases para que pueda funcionar correctamente.
 
+## Actualizando los ENUMS
+
+Para los `ENUMS` de `Stats` y `EnemyType`, deberemos de agregar los siguientes valores:
+
+```java
+package rpg.enums;
+
+/**
+ * Características de los personajes.
+ *
+ * @author Fulanito
+ */
+public enum Stats {
+    /**
+     * Vida máxima.
+     */
+    MAX_HP,
+    /**
+     * Vida actual.
+     */
+    HP,
+    /**
+     * Puntos de magia máximos.
+     */
+    MAX_MP,
+    /**
+     * Puntos de magia actuales.
+     */
+    MP,
+    /**
+     * Ataque.
+     */
+    ATTACK,
+    /**
+     * Defensa.
+     */
+    DEFENSE,
+    /**
+     * Velocidad.
+     */
+    SPEED,
+    /**
+     * Suerte.
+     */
+    LUCK,
+    /**
+     * Precisión.
+     */
+    ACCURACY,
+    /**
+     * Evasión.
+     */
+    EVASION,
+    /**
+     * Destreza
+     */
+    DEXTERITY,
+    /**
+     * Inteligencia.
+     */
+    INTELLIGENCE,
+    EXPERIENCE,
+    NEEDED_EXPERIENCE,
+    LEVEL,
+    GOLD
+}
+```
+
+```java
+package rpg.enums;
+
+/**
+ * The enum Enemy type.
+ */
+public enum EnemyType {
+
+    /**
+     * Tipo de enemigo básico.
+     */
+    BASIC,
+    /**
+     * Tipo de enemigo medio.
+     */
+    MEDIUM,
+    /**
+     * Tipo de enemigo jefe.
+     */
+    BOSS,
+    /**
+     * Tipo de enemigo secreto.
+     */
+    SECRET
+}
+```
+
+## Conclusión
+
 Con estas actualizaciones, hemos preparado al jugador y a los enemigos para interactuar entre sí y con el resto de la
 aplicación. En la siguiente sección, veremos cómo implementar la lógica de combate entre el jugador y los enemigos.
