@@ -4,6 +4,194 @@ De aquí en adelante, deberemos de realizar una serie de actualizaciones en las 
 interactuar entre sí y con el resto de la aplicación. En esta sección, veremos cómo actualizar estas clases para que
 puedan atacar, recibir daño y mostrar mensajes al jugador.
 
+## GameCharacter
+
+Antes que nada actualicemos la clase base `GameCharacter` para que pueda recibir daño y mostrar mensajes al jugador.
+
+```java
+package rpg.entities;
+
+import rpg.enums.Stats;
+import rpg.exceptions.EnemyDeathException;
+
+import java.io.Serializable;
+import java.util.HashMap;
+
+/**
+ * Clase que representa a un personaje del juego.
+ */
+public abstract class GameCharacter implements Serializable {
+    /**
+     * Nombre del personaje.
+     */
+    protected String name;
+    /**
+     * Características del personaje.
+     */
+    protected HashMap<Stats, Integer> stats;
+
+    /**
+     * Instantiates a new Game character.
+     *
+     * @param name the name
+     */
+    public GameCharacter(String name) {
+
+        this.name = name;
+        this.stats = new HashMap<>();
+        initCharacter();
+    }
+
+    /**
+     * Función que inicializa las características del personaje.
+     * Implementada por las clases hijas.
+     * Deberá de incluir el nombre del personaje y las características mínimas para su funcionamiento.
+     */
+    protected abstract void initCharacter();
+
+    /**
+     * Is alive boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isAlive() {
+        return stats.get(Stats.HP) > 0;
+    }
+
+    /**
+     * Función que simula un ataque del personaje al enemigo e imprime un mensaje
+     * en consola con el resultado del ataque. Si el daño es mayor a 0, se resta
+     * la cantidad de daño a la vida del enemigo. Si el daño es menor o igual a 0,
+     * se imprime un mensaje indicando que no se hizo daño.
+     *
+     * @param enemy el enemigo a atacar.
+     */
+    public String attack(GameCharacter enemy) {
+
+        String message = "";
+        String enemyName = enemy.getName();
+        int damage = this.stats.get(Stats.ATTACK) - enemy.getStats().get(Stats.DEFENSE);
+        int newHP = enemy.getStats().get(Stats.HP);
+        if (damage > 0) {
+
+            try {
+                newHP = reduceHP(enemy, damage);
+                message += String.format("""
+                        ¡%s ataca a %s por %d de daño!
+                        %s tiene %d HP restantes.
+                        """, this.name, enemyName, damage, enemyName, newHP);
+            } catch (EnemyDeathException e) {
+                enemy.getStats().put(Stats.HP, 0);
+                message += String.format("""
+                        %s attacks %s for %d damage!
+                        %s has 0 HP left.
+                        %s has died.
+                        """, this.name, enemyName, damage, enemyName, enemyName);
+            }
+        } else {
+            message += String.format("""
+                    ¡%s ataca a %s pero no hace daño!
+                    %s tiene %d HP restantes.
+                    """, this.name, enemyName, enemyName, newHP);
+        }
+        return message;
+    }
+
+    /**
+     * Función que reduce la vida del enemigo y actualiza sus características.
+     *
+     * @param enemy  el enemigo a atacar.
+     * @param damage el daño a realizar.
+     * @return la nueva vida del enemigo.
+     */
+    protected final int reduceHP(GameCharacter enemy, int damage) throws EnemyDeathException {
+
+        int newHP = enemy.getStats().get(Stats.HP) - damage;
+        enemy.getStats().put(Stats.HP, newHP);
+        if (!enemy.isAlive())
+            throw new EnemyDeathException();
+        return newHP;
+    }
+
+    /**
+     * Devuelve el nombre del personaje con un epíteto.
+     *
+     * @return el nombre del personaje con el epíteto.
+     */
+    public final String getName() {
+
+        return String.format("%s", name);
+    }
+
+    /**
+     * Gets stats.
+     *
+     * @return the stats
+     */
+    public final HashMap<Stats, Integer> getStats() {
+
+        return stats;
+    }
+}
+```
+
+## Las excepciones
+
+Además de la clase `GameCharacter`, necesitamos una excepción que se lance cuando un enemigo muere. Para ello, crearemos
+la siguiente clase:
+
+```java
+package rpg.exceptions;
+
+/**
+ * Excepción que se lanza cuando un enemigo muere.
+ * Puede ser lanzada por la función attack de la clase Player o
+ * por la función attack de la clase Enemy.
+ */
+public class EnemyDeathException extends Exception {
+
+    /**
+     * Constructor de la excepción de muerte de enemigo.
+     */
+    public EnemyDeathException() {
+
+        super("El enemigo ha muerto");
+    }
+}
+```
+
+También necesitamos una excepción cuando no se encuentre un Item o cuando el inventario esté lleno. Para ello, crearemos
+las siguientes clases:
+
+```java
+package rpg.exceptions;
+
+/**
+ * Excepción que se lanza cuando el inventario está lleno.
+ */
+public class InventoryFullException extends Exception {
+
+    /**
+     * Constructor de la excepción de inventario lleno.
+     */
+    public InventoryFullException() {
+
+        super("Inventory is full");
+    }
+}
+```
+
+```java
+package rpg.exceptions;
+
+public class ItemNotFoundException extends Exception {
+
+    public ItemNotFoundException() {
+        super("Item not found");
+    }
+}
+```
+
 ## Actualizando al Jugador
 
 Nuestro jugador, representado por la clase `Player`, necesita ser actualizado para que pueda atacar a los enemigos y
