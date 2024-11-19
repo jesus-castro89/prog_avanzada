@@ -29,7 +29,7 @@ presione el botón.
 Para diferenciar nuestro botones, debemos recordar que tenemos dos clases para las UI de los botones: `HoverButtonUI`
 y `UserHoverUI`, las cuales nos permiten hacer que los botones cambien de color cuando el mouse pase sobre ellos.
 
-Las dos clases deberán ser abstractas y deberán de fungrir como clases padre para las clases que crearemos para los
+Las dos clases deberán ser abstractas y deberán de fungir como clases padre para las clases que crearemos para los
 botones de la aplicación.
 
 ## El botón de ataque
@@ -115,6 +115,3 @@ Al igual que este ejemplo, deberemos de crear las clases para los demás eventos
 
 Para los demás botones y eventos, deberemos de seguir el mismo procedimiento que hemos seguido para el botón de ataque y
 su evento.
-
-> **Nota:** Recuerda que por ahora no estamos agregando los eventos a los botones, solo estamos creando las clases que
-> los representan.
