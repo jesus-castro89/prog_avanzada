@@ -87,5 +87,6 @@
         <toc-element topic="main-window.md"/>
         <toc-element topic="new-window.md"/>
         <toc-element topic="buttons-events.md"/>
+        <toc-element topic="structura-archivos-2.md"/>
     </toc-element>
 </instance-profile>
