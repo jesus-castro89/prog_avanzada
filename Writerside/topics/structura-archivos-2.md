@@ -169,4 +169,4 @@ En este paquete se encuentran todas las clases que hemos creado para cachear las
 en el juego.
 
 Puedes consultar el código fuente completo del proyecto en el siguiente
-enlace: [U5-U6](https://github.com/jesus-castro89/repos/tree/U5_U6)
+enlace: [U5-U6](https://github.com/jesus-castro89/repos/tree/PR7/src/rpg)
