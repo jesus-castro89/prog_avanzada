@@ -38,8 +38,6 @@ ventana de estado, se mostrará la información del jugador, como su ataque, def
 
 Aquí tienes un ejemplo de cómo se vería la ventana de estado en la ventana principal:
 
-
-
 En este ejemplo, la ventana de estado muestra la información del jugador, como su ataque, defensa, armamento, etc. La
 ventana de estado se encuentra en el centro de la ventana principal y se puede cerrar haciendo clic en el botón de
 cierre en la esquina superior derecha.
@@ -135,3 +133,13 @@ Ten en cuenta que este código es solo un ejemplo y puede variar dependiendo de 
 
 Con estos cambios, hemos creado la ventana de estado que se mostrará en el centro de la ventana principal. En esta
 ventana de estado, se mostrará la información del jugador, como su ataque, defensa, armamento, etc.
+
+> **Nota:** Para este ejemplo se esta tomando una clase llamada `InternalPanel` que es una clase que extiende de
+> `BackgroundPanel` y que se utiliza para crear paneles internos con un fondo de imagen. Puedes crear tu propia clase
+> `InternalPanel` o utilizar la clase `BackgroundPanel` directamente. Tambien se considerá una clase llamada
+> `InternalStatusBar` que es una clase que extiende de `JPanel` y que se utiliza para mostrar la barra de estado del
+> jugador. Puedes crear tu propia clase `InternalStatusBar` o utilizar la clase `JPanel` directamente.
+
+Recuerda ajustar las dimensiones a tu gusto y asegurarte de que la ventana de estado se vea correctamente en la ventana
+principal. También puedes personalizar la ventana de estado cambiando los colores, fuentes, imágenes, etc. para que se
+adapte a tus necesidades y requerimientos.
