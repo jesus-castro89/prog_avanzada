@@ -31,6 +31,7 @@
         <toc-element topic="algoritmoejemplo.md"/>
     </toc-element>
     <toc-element topic="function-call.md"/>
+    <toc-element topic="reading.md"/>
     <toc-element topic="uimanager.md"/>
     <toc-element topic="static.md"/>
     <toc-element topic="enums.md"/>
