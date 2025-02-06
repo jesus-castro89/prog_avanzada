@@ -8,6 +8,7 @@
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="ide.md"/>
+    <toc-element topic="comprimir-proyecto.md"/>
     <toc-element topic="nivel-acceso.md"/>
     <toc-element topic="restricted-words.md"/>
     <toc-element topic="camel-case.md"/>
@@ -32,6 +33,11 @@
     </toc-element>
     <toc-element topic="function-call.md"/>
     <toc-element topic="reading.md"/>
+    <toc-element toc-title="JOptionPane">
+        <toc-element topic="message-dialog.md"/>
+        <toc-element topic="input-message.md"/>
+        <toc-element topic="confirm-dialog.md"/>
+    </toc-element>
     <toc-element topic="uimanager.md"/>
     <toc-element topic="static.md"/>
     <toc-element topic="enums.md"/>
