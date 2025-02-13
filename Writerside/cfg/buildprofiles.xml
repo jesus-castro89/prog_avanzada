@@ -6,7 +6,8 @@
     <variables>
         <noindex-content>false</noindex-content>
         <custom-css>custom.css</custom-css>
-        <primary-color>forest</primary-color>
+        <primary-color>dracula</primary-color>
+        <color-preset>vivid</color-preset>
         <custom-favicons>
             favicon-16x16.png, favicon-32x32.png, favicon-192x192.png, favicon-512x512.png
         </custom-favicons>

@@ -8,12 +8,12 @@
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="ide.md"/>
-    <toc-element topic="comprimir-proyecto.md"/>
-    <toc-element topic="nivel-acceso.md"/>
-    <toc-element topic="restricted-words.md"/>
-    <toc-element topic="camel-case.md"/>
     <toc-element topic="java-structure.md"/>
+    <toc-element topic="comprimir-proyecto.md"/>
     <toc-element topic="clases-objetos.md">
+        <toc-element topic="camel-case.md"/>
+        <toc-element topic="restricted-words.md"/>
+        <toc-element topic="nivel-acceso.md"/>
         <toc-element topic="constructor.md"/>
         <toc-element topic="create-object.md"/>
     </toc-element>
@@ -23,9 +23,9 @@
     </toc-element>
     <toc-element topic="operadores.md">
         <toc-element topic="presedencia.md"/>
-    </toc-element>
-    <toc-element topic="verdad.md">
-        <toc-element topic="verdad-if.md"/>
+        <toc-element topic="verdad.md">
+            <toc-element topic="verdad-if.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="package.md"/>
     <toc-element topic="oneClass.md">
@@ -33,12 +33,15 @@
     </toc-element>
     <toc-element topic="function-call.md"/>
     <toc-element topic="reading.md"/>
+    <toc-element topic="doxygen.md"/>
     <toc-element toc-title="JOptionPane">
         <toc-element topic="message-dialog.md"/>
         <toc-element topic="input-message.md"/>
         <toc-element topic="confirm-dialog.md"/>
+        <toc-element topic="uimanager.md"/>
     </toc-element>
-    <toc-element topic="uimanager.md"/>
+    <toc-element topic="menu.md"/>
+    <toc-element topic="final.md"/>
     <toc-element topic="static.md"/>
     <toc-element topic="enums.md"/>
     <toc-element topic="arrays.md"/>
@@ -65,40 +68,4 @@
         <toc-element topic="BasicInterFrameUI.md"/>
     </toc-element>
     <toc-element topic="jtabbed.md"/>
-    <toc-element topic="doxygen.md"/>
-    <toc-element topic="Proyecto-Integrador.md">
-        <toc-element topic="commit-update.md"/>
-        <toc-element topic="github.md"/>
-        <toc-element topic="rpg-package.md"/>
-        <toc-element topic="stats.md"/>
-        <toc-element topic="player-enemy.md"/>
-        <toc-element topic="interaction.md"/>
-        <toc-element topic="extends-enemy.md">
-        </toc-element>
-        <toc-element topic="abstract-character.md"/>
-        <toc-element topic="inventory.md">
-            <toc-element topic="implements-inventory.md"/>
-            <toc-element topic="miscs.md"/>
-            <toc-element topic="item-ejemplos.md"/>
-        </toc-element>
-        <toc-element topic="player-inventory.md"/>
-        <toc-element topic="window.md"/>
-        <toc-element topic="sections.md"/>
-        <toc-element topic="caches.md"/>
-        <toc-element topic="panels.md"/>
-        <toc-element topic="draw-panels.md"/>
-        <toc-element topic="ui-buttons.md"/>
-        <toc-element topic="portrait.md"/>
-        <toc-element topic="status-bars.md"/>
-        <toc-element topic="centerLabel.md"/>
-        <toc-element topic="sprites.md"/>
-        <toc-element topic="textarea.md"/>
-        <toc-element topic="update-entities.md"/>
-        <toc-element topic="enemy-factory.md"/>
-        <toc-element topic="main-window.md"/>
-        <toc-element topic="new-window.md"/>
-        <toc-element topic="buttons-events.md"/>
-        <toc-element topic="structura-archivos-2.md"/>
-        <toc-element topic="status-frame.md"/>
-    </toc-element>
 </instance-profile>

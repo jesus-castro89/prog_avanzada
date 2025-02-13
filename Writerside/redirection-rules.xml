@@ -23,4 +23,185 @@
         </description>
         <accepts>enemy-diagram.html</accepts>
     </rule>
+    <rule id="697b8cb8">
+        <description>Created after removal of "Commit y Update de Archivos" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>commit-update.html</accepts>
+    </rule>
+    <rule id="53a4f435">
+        <description>Created after removal of "1.- Iniciando el proyecto" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>github.html</accepts>
+    </rule>
+    <rule id="3bae2239">
+        <description>Created after removal of "2.- Creando los paquetes" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>rpg-package.html</accepts>
+    </rule>
+    <rule id="7ffb0c83">
+        <description>Created after removal of "3.- Creando las clases y enumeraciones" from Programación Orientada a
+            Objetos :: Java
+        </description>
+        <accepts>stats.html</accepts>
+    </rule>
+    <rule id="2562410b">
+        <description>Created after removal of "4.- Creando al jugador y al enemigo" from Programación Orientada a
+            Objetos :: Java
+        </description>
+        <accepts>player-enemy.html</accepts>
+    </rule>
+    <rule id="5b17f3a1">
+        <description>Created after removal of "5.- La interacción entre el jugador y los enemigos" from Programación
+            Orientada a Objetos :: Java
+        </description>
+        <accepts>interaction.html</accepts>
+    </rule>
+    <rule id="407b0de2">
+        <description>Created after removal of "6.- Los enemigos" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>extends-enemy.html</accepts>
+    </rule>
+    <rule id="3b56a7db">
+        <description>Created after removal of "7. Las clases Abstractas y las Interfaces" from Programación Orientada a
+            Objetos :: Java
+        </description>
+        <accepts>abstract-character.html</accepts>
+    </rule>
+    <rule id="2ecc3eea">
+        <description>Created after removal of "8. El inventario de Objetos" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>inventory.html</accepts>
+    </rule>
+    <rule id="18c55891">
+        <description>Created after removal of "Implementando un inventario" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>implements-inventory.html</accepts>
+    </rule>
+    <rule id="4b894f30">
+        <description>Created after removal of "Actualizando los Misceláneos" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>miscs.html</accepts>
+    </rule>
+    <rule id="567f11bf">
+        <description>Created after removal of "Ejemplos de Items" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>item-ejemplos.html</accepts>
+    </rule>
+    <rule id="5212d727">
+        <description>Created after removal of "9. Agregando el Inventario" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>player-inventory.html</accepts>
+    </rule>
+    <rule id="4e2dcbb4">
+        <description>Created after removal of "10. Iniciando la GUI del juego" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>window.html</accepts>
+    </rule>
+    <rule id="3b0c5306">
+        <description>Created after removal of "11. Secciones de iniciales de la ventana" from Programación Orientada a
+            Objetos :: Java
+        </description>
+        <accepts>sections.html</accepts>
+    </rule>
+    <rule id="386ff838">
+        <description>Created after removal of "12. Las cachés" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>caches.html</accepts>
+    </rule>
+    <rule id="672d4358">
+        <description>Created after removal of "13. Creando los paneles" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>panels.html</accepts>
+    </rule>
+    <rule id="4a301f51">
+        <description>Created after removal of "14. Dibujando los paneles" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>draw-panels.html</accepts>
+    </rule>
+    <rule id="5f00a664">
+        <description>Created after removal of "15. Agregando los primeros botones" from Programación Orientada a Objetos
+            :: Java
+        </description>
+        <accepts>ui-buttons.html</accepts>
+    </rule>
+    <rule id="17e093bf">
+        <description>Created after removal of "16. El retrato del personaje" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>portrait.html</accepts>
+    </rule>
+    <rule id="73371391">
+        <description>Created after removal of "17. Las barras de estado" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>status-bars.html</accepts>
+    </rule>
+    <rule id="38b34bbd">
+        <description>Created after removal of "18. Las etiquetas de los nombres y el dinero" from Programación Orientada
+            a Objetos :: Java
+        </description>
+        <accepts>centerLabel.html</accepts>
+    </rule>
+    <rule id="50985cbc">
+        <description>Created after removal of "19. Los sprites" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>sprites.html</accepts>
+    </rule>
+    <rule id="2c0014b9">
+        <description>Created after removal of "20. El área de mensajes" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>textarea.html</accepts>
+    </rule>
+    <rule id="748c26">
+        <description>Created after removal of "21. Actualizando el Jugador y los Enemigos" from Programación Orientada a
+            Objetos :: Java
+        </description>
+        <accepts>update-entities.html</accepts>
+    </rule>
+    <rule id="41fd1d1f">
+        <description>Created after removal of "22. La fábrica de enemigos" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>enemy-factory.html</accepts>
+    </rule>
+    <rule id="339bf000">
+        <description>Created after removal of "23. Nuestra ventana principal" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>main-window.html</accepts>
+    </rule>
+    <rule id="4d9e3516">
+        <description>Created after removal of "24. Las ventanas de la aplicación" from Programación Orientada a Objetos
+            :: Java
+        </description>
+        <accepts>new-window.html</accepts>
+    </rule>
+    <rule id="27b47f74">
+        <description>Created after removal of "25. Botones y eventos" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>buttons-events.html</accepts>
+    </rule>
+    <rule id="5de6760f">
+        <description>Created after removal of "26. Estructura de archivos" from Programación Orientada a Objetos ::
+            Java
+        </description>
+        <accepts>structura-archivos-2.html</accepts>
+    </rule>
+    <rule id="504a81ec">
+        <description>Created after removal of "27. La ventana de estado" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>status-frame.html</accepts>
+    </rule>
+    <rule id="521be789">
+        <description>Created after removal of "Proyecto Integrador" from Programación Orientada a Objetos :: Java
+        </description>
+        <accepts>Proyecto-Integrador.html</accepts>
+    </rule>
 </rules>
