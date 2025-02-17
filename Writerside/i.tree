@@ -68,4 +68,7 @@
         <toc-element topic="BasicInterFrameUI.md"/>
     </toc-element>
     <toc-element topic="jtabbed.md"/>
+    <toc-element toc-title="Ejemplos Prácticos">
+        <toc-element topic="practica1.md"/>
+    </toc-element>
 </instance-profile>
