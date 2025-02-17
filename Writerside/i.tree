@@ -27,6 +27,12 @@
             <toc-element topic="verdad-if.md"/>
         </toc-element>
     </toc-element>
+    <toc-element toc-title="Control de Flujo">
+        <toc-element topic="if-extense.md"/>
+        <toc-element topic="switch-extense.md"/>
+        <toc-element topic="for-extense.md"/>
+        <toc-element topic="ternary-extense.md"/>
+    </toc-element>
     <toc-element topic="package.md"/>
     <toc-element topic="oneClass.md">
         <toc-element topic="algoritmoejemplo.md"/>
