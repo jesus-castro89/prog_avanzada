@@ -41,6 +41,8 @@
         <toc-element topic="uimanager.md"/>
     </toc-element>
     <toc-element topic="menu.md"/>
+    <toc-element topic="parametros.md"/>
+    <toc-element topic="sobrecarga.md"/>
     <toc-element topic="final.md"/>
     <toc-element topic="static.md"/>
     <toc-element topic="enums.md"/>
