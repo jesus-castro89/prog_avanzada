@@ -191,6 +191,10 @@ public class EmpleadoTiempoCompleto extends Empleado {
 }
 ```
 
+> En la clase `EmpleadoTiempoCompleto` se ha sobrescrito el método `calcularSalarioMensual` para calcular el salario
+> mensual del empleado de tiempo completo. El salario mensual de un empleado de tiempo completo es el salario mensual
+> fijo.
+
 ### Clase `EmpleadoMedioTiempo`
 
 ```java
@@ -212,6 +216,10 @@ public class EmpleadoMedioTiempo extends Empleado {
     }
 }
 ```
+
+> En la clase `EmpleadoMedioTiempo` se ha sobrescrito el método `calcularSalarioMensual` para calcular el salario
+> mensual del empleado de medio tiempo. El salario mensual de un empleado de medio tiempo es el salario por hora
+> multiplicado por las horas trabajadas por semana.
 
 ### Clase `EmpleadoPorContrato`
 
@@ -235,11 +243,9 @@ public class EmpleadoPorContrato extends Empleado {
 }
 ```
 
-> **Nota:** En las clases `EmpleadoTiempoCompleto`, `EmpleadoMedioTiempo` y `EmpleadoPorContrato` se ha sobrescrito el
-> método `calcularSalarioMensual` para calcular el salario mensual de cada tipo de empleado. El salario mensual de un
-> empleado de tiempo completo es el salario mensual fijo, el salario mensual de un empleado de medio tiempo es el
-> salario por hora multiplicado por las horas trabajadas por semana y el salario mensual de un empleado por contrato es
-> el salario por proyecto multiplicado por el número de proyectos completados.
+> En la clase `EmpleadoPorContrato` se ha sobrescrito el método `calcularSalarioMensual` para calcular el salario
+> mensual del empleado por contrato. El salario mensual de un empleado por contrato es el salario por proyecto
+> multiplicado por el número de proyectos completados.
 
 ### ¿Necesitamos algo más?
 
