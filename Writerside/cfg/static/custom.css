@@ -3,6 +3,17 @@
 @import url('https://fonts.googleapis.com/css?family=MuseoModerno:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rosario:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap');
 
+article.layout.layout--grow.app__article {
+    padding-top: 20px;
+}
+
+.app__sub-header {
+    height: 5px;
+}
+
+.plantuml {
+    text-align: center;
+}
 
 .plantuml {
     text-align: center;
