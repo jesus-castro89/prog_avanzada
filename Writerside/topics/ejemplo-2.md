@@ -52,43 +52,23 @@ class Empleado {
     # edad: int
     # telefono: long
     # noEmpleado: int
-    + getNombre(): String
-    + setNombre(nombre: String): void
-    + getApellido(): String
-    + setApellido(apellido: String): void
-    + getEdad(): int
-    + setEdad(edad: int): void
-    + getTelefono(): String
-    + setTelefono(telefono: String): void
-    + getNoEmpleado(): int
-    + setNoEmpleado(noEmpleado: int): void
     + calcularSalarioMensual(): double
 }
 
 class EmpleadoTiempoCompleto {
     - salarioMensual: double
-    + getSalarioMensual(): double
-    + setSalarioMensual(salarioMensual: double): void
     + calcularSalarioMensual(): double
 }
 
 class EmpleadoMedioTiempo {
     - salarioHora: double
     - horasTrabajadas: int
-    + getSalarioHora(): double
-    + setSalarioHora(salarioHora: double): void
-    + getHorasTrabajadas(): int
-    + setHorasTrabajadas(horasTrabajadas: int): void
     + calcularSalarioMensual(): double
 }
 
 class EmpleadoPorContrato {
     - salarioProyecto: double
     - proyectosCompletados: int
-    + getSalarioProyecto(): double
-    + setSalarioProyecto(salarioProyecto: double): void
-    + getProyectosCompletados(): int
-    + setProyectosCompletados(proyectosCompletados: int): void
     + calcularSalarioMensual(): double
 }
 
@@ -112,9 +92,9 @@ class Nomina {
 Empleado <|-- EmpleadoTiempoCompleto
 Empleado <|-- EmpleadoMedioTiempo
 Empleado <|-- EmpleadoPorContrato
-Nomina "1" o-- "0..*" EmpleadoTiempoCompleto
-Nomina "1" o-- "0..*" EmpleadoMedioTiempo
-Nomina "1" o-- "0..*" EmpleadoPorContrato
+EmpleadoMedioTiempo "0..*" o-- "1" Nomina
+EmpleadoPorContrato "0..*" o-- "1" Nomina
+EmpleadoTiempoCompleto "0..*" o-- "1" Nomina
 
 @enduml
 ```
@@ -191,6 +171,10 @@ public class EmpleadoTiempoCompleto extends Empleado {
 }
 ```
 
+> **Nota:** En esta clase y todas las clases derivadas se usa `super()` para llamar al constructor de la clase base.
+> Esto es necesario para inicializar los atributos de la clase base antes de inicializar los atributos de la clase
+> derivada.
+
 > En la clase `EmpleadoTiempoCompleto` se ha sobrescrito el método `calcularSalarioMensual` para calcular el salario
 > mensual del empleado de tiempo completo. El salario mensual de un empleado de tiempo completo es el salario mensual
 > fijo.
@@ -251,38 +235,7 @@ public class EmpleadoPorContrato extends Empleado {
 
 Para poder definir el menú de opciones y realizar las operaciones requeridas en el sistema, podemos hacer uso de un tipo
 de dato `enum` para definir las opciones del menú y un objeto de la clase `Nomina` para gestionar la nómina de
-empleados. Además de definir un tipo de dato `enum` para los tipos de empleados.
-
-### Clase `TipoEmpleado`
-
-```java
-public enum TipoEmpleado {
-    TIEMPO_COMPLETO,
-    MEDIO_TIEMPO,
-    POR_CONTRATO;
-    
-    private final String descripcion;
-    
-    private TipoEmpleado(){
-        this.descripcion= this.name().replace("_", " ").toLowerCase();
-    }
-    
-    @Override
-    public String toString(){
-        return "%d - Empleado: %s".formatted(this.ordinal() + 1, this.descripcion);
-    }
-}
-```
-
-> **Nota:** En la clase `TipoEmpleado` se ha definido un tipo de dato `enum` con los tipos de empleados disponibles:
-> tiempo completo, medio tiempo y por contrato. Se ha sobrescrito el método `toString` para mostrar la descripción de
-> cada tipo de empleado en el menú de opciones. Recordemos que la función `toString` se utiliza para convertir un objeto
-> en una cadena de texto y es compartida por todas las clases en Java.
-
-> La función `this.name()` devuelve el nombre del objeto `enum` en mayúsculas y con guiones bajos. Por ejemplo, el
-> objeto `TIEMPO_COMPLETO` devolverá `"TIEMPO_COMPLETO"`.
-> Por su parte, la función `this.ordinal()` devuelve la posición del objeto `enum` en la lista de objetos. Por ejemplo,
-> el objeto `TIEMPO_COMPLETO` devolverá `0`.
+empleados. A continuación se muestra la implementación de la clase `OpcionMenu` y la clase `Nomina`:
 
 ### Clase `OpcionMenu`
 
@@ -313,6 +266,11 @@ public enum OpcionMenu{
     }
 }
 ```
+
+> En la clase `OpcionMenu` se ha definido un tipo de dato `enum` con las opciones del menú. Cada opción tiene una
+> descripción asociada que se muestra al usuario en el menú. Se ha sobrescrito el método `toString` para mostrar el
+> número de la opción y su descripción. El número de la opción se obtiene a partir del índice del elemento en el `enum`
+> más 1.
 
 ### Clase `Nomina`
 
