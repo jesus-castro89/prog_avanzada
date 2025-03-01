@@ -8,33 +8,3 @@ sistema y planificar su implementación.
 El diagrama de clases de `BrickBreak` irá modificándose conforme se vayan agregando nuevas clases y funcionalidades al
 juego. A continuación se muestra el diagrama de clases inicial del juego `BrickBreak`:
 
-```plantuml
-@startuml
-
-package game.brickbreak{
-class Sprite {
-    # x: int
-    # y: int
-    # width: int
-    # height: int
-}
-
-class Ball {
-    - stop: boolean
-    - dxStop: int
-    - dx: int
-    - dy: int
-    + resetState(): void
-    + getCenter(): int
-    + getMiddle(): int
-}
-
-class Paddle {
-    - dx: int
-    - minX: int
-    - maxX: int
-    - minY: int
-    - maxY: int 
-    + move(): void
-}
-}
