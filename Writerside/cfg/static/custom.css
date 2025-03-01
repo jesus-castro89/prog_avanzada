@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Saira:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap');
 @import url('https://fonts.googleapis.com/css?family=MuseoModerno:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rosario:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 article.layout.layout--grow.app__article {
     padding-top: 20px;
@@ -9,6 +10,21 @@ article.layout.layout--grow.app__article {
 
 .app__sub-header {
     height: 5px;
+}
+
+pre[class*=language-]  {
+    font-family: "Fira Code", monospace;
+    font-size: 1.35rem;
+    line-height: 1.05;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.code{
+    font-family: "Fira Code", monospace;
+    font-size: 1.15rem;
 }
 
 .plantuml {
@@ -60,7 +76,7 @@ article.layout.layout--grow.app__article {
 }
 
 .article__p {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     line-height: 1.25;
     font-weight: 400;
     font-family: "Rosario", sans-serif;

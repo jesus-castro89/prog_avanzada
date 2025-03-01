@@ -204,4 +204,8 @@
         </description>
         <accepts>Proyecto-Integrador.html</accepts>
     </rule>
+    <rule id="36b3a5df">
+        <description>Created after removal of "Polimorfismo" from Programación Orientada a Objetos :: Java</description>
+        <accepts>polymorf.html</accepts>
+    </rule>
 </rules>

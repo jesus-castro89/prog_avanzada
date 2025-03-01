@@ -1,43 +1,72 @@
 @startuml
-skinparam packageStyle frame
-skinparam arrow{
-    color crimson
-    headColor crimson
-    thickness 2.5
+
+package game.brick_break{
+    package entities{
+        class Sprite {
+            # x: int
+            # y: int
+            # width: int
+            # height: int
+        }
+        class CollideSprite extends Sprite {
+            - minX: int
+            - maxX: int
+            - minY: int
+            - maxY: int
+        }
+        class Ball extends game.brick_break.entities.Sprite{
+            - stop: boolean
+            - dxStop: int
+            - dx: int
+            - dy: int
+            + resetState(): void
+            + getCenter(): int
+            + getMiddle(): int
+        }
+        package paddle{
+            enum PaddleType{
+                NORMAL
+                LONG
+                SHORT
+                LASER
+            }
+            class Paddle extends game.brick_break.entities.CollideSprite {
+                - dx: int
+                + move(): void
+            }
+        }
+        package border{
+            enum BorderType{
+                TOP
+                BOTTOM
+                LEFT
+                RIGHT
+            }
+            class Border extends game.brick_break.entities.CollideSprite {
+                - borderType: BorderType
+            }
+        }
+        package brick{
+            enum BrickType{
+                BLUE
+                GREEN
+                RED
+                YELLOW
+            }
+            class Brick extends game.brick_break.entities.CollideSprite {
+                - life: int
+                - score: int
+                - destroy: boolean
+                + minusLife(): void
+
+            }
+            class UnbreakableBrick extends Brick {
+
+            }
+        }
+    }
 }
-interface rpg.interfaces.Equipable{
-    + equip(): void
-    + unequip(): void
-}
-interface rpg.interfaces.Salable{
-    + sell(): void
-}
-abstract class rpg.items.Item{
-    # name: String
-    # description: String
-    # price: int
-    # itemType: ItemType
-}
-abstract class rpg.items.Equipment extends rpg.items.Item implements rpg.interfaces.Equipable, rpg.interfaces.Salable{
-    # slot: Slot
-    # rarity: Rarity
-    # stats: HashMap<Stat, int>
-}
-abstract class rpg.items.armors.Armor extends rpg.items.Equipment{
-    # armorType: ArmorType
-}
-abstract class rpg.items.weapons.Weapon extends rpg.items.Equipment{
-    # weaponType: WeaponType
-}
-class rpg.items.weapons.swords.Sword extends rpg.items.weapons.Weapon{
-    + slash(): void
-}
-class rpg.items.armors.helmets.Helmet extends rpg.items.armors.Armor{
-    + protect(): void
-}
-class rpg.items.Misc extends rpg.items.Item implements rpg.interfaces.Salable{
-    # consumable: boolean
-    # stackable: boolean
-    + use(): void
-}
+
+Paddle -- PaddleType
+
 @enduml
