@@ -55,6 +55,9 @@
     <toc-element topic="arrays.md"/>
     <toc-element topic="hashmap.md"/>
     <toc-element topic="extends.md">
+        <toc-element topic="base-derivada.md"/>
+        <toc-element topic="constructores.md"/>
+        <toc-element topic="super.md"/>
         <toc-element topic="extends-type.md"/>
         <toc-element topic="overflow.md"/>
         <toc-element topic="overwrite.md"/>

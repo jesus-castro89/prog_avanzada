@@ -208,4 +208,10 @@
         <description>Created after removal of "Polimorfismo" from Programación Orientada a Objetos :: Java</description>
         <accepts>polymorf.html</accepts>
     </rule>
+    <rule id="676d2f55">
+        <description>Created after removal of "Herencia de clases: `public`, `protected` y `private`" from Programación
+            Orientada a Objetos :: Java
+        </description>
+        <accepts>herencia-acceso.html</accepts>
+    </rule>
 </rules>
